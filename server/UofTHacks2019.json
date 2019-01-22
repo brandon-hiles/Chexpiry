@@ -1,0 +1,22 @@
+To generate this file, follow the following steps:
+1. Navigate to Google cloud console and enable cloud vision api
+2. Go to the credential page
+3. Click on the Create credentials
+4. Select Service Account key
+5. Fill in the required fields (this is change from user to user)
+6. Download JSON File
+Note: If you change the json file name, you will need to update app.py file
+
+Example Template
+{
+  "type": "service_account",
+  "project_id": "<Insert project_id>",
+  "private_key_id": "<Insert Private Key Id>",
+  "private_key": "<Insert Private Key>",
+  "client_email": "<Insert client email>",
+  "client_id": "<Insert Client Id>",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uofthack2019%40uofthacks2019.iam.gserviceaccount.com"
+}
