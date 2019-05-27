@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Chexpiry - Go Shopping</title>
+    <title>Chexpiry - an intelligent way to reduce waste</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,12 +38,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item px-lg-4">
+            <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="index.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="about.html">Go Shopping</a>
             </li>
             <li class="nav-item px-lg-4">
@@ -57,47 +57,29 @@
       </div>
     </nav>
 
-    <section class="page-section about-heading">
+    <section class="page-section clearfix">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-xl-9 col-lg-10 mx-auto">
-              <div class="bg-faded rounded p-5">
-                <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">share your shopping</span>
-                  <span class="section-heading-lower">Scan your groceries</span>
-                </h2>
-                <p>Attach a photo of your groceries for identification</p>
-                <form action="http://images.u.of.t.hacks.2019.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-    <input type="hidden"  name="key" value="user/user1/${filename}" /><br />
-    <input type="hidden" name="acl" value="public-read" />
-    <input type="hidden" name="success_action_redirect" value="http://sigv4examplebucket.s3.amazonaws.com/successful_upload.html" />
-    <input type="hidden"  name="Content-Type" value="image/jpeg" /><br />
-    <input type="hidden" name="x-amz-meta-uuid" value="14365123651274" />
-    <input type="hidden" name="x-amz-server-side-encryption" value="AES256" />
-    <input type="hidden"   name="X-Amz-Credential" value="AKIAJWTWCUESHMQKRJXA/20151229/ca-central-1/s3/aws4_request" />
-    <input type="hidden"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
-    <input type="hidden"   name="X-Amz-Date" value="20151229T000000Z" />
-
-    <input type="hidden"  name="x-amz-meta-tag" value="" /><br />
-    <input type="hidden" name="Policy" value='<Base64-encoded policy string>' />
-    <input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
-    File:
-    <input type="file"   name="file" /> <br />
-    <!-- The elements after this will be ignored -->
-    <input type="submit" name="submit" value="Upload to Amazon S3" />
-  </form>
-              </div>
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">A morsel of impact</span>
+              <span class="section-heading-lower">Get started on reducing food waste</span>
+            </h2>
+            <p class="mb-3">Upload photos from your grocery shopping for information and reminders about expiration. In time, you can expect suggestions about how you can improve your shopping habits to reduce waste. Let's make sustainable choices, one bite at a time.
+            </p>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" href="about.html">Go Shopping!</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+
     <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 small">Copyright &copy; Chexpiry 2019</p>
       </div>
     </footer>
 

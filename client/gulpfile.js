@@ -1,96 +1,43 @@
-// Load plugins
-const autoprefixer = require("gulp-autoprefixer");
-const browsersync = require("browser-sync").create();
-const cleanCSS = require("gulp-clean-css");
-const gulp = require("gulp");
-const header = require("gulp-header");
-const plumber = require("gulp-plumber");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const pkg = require('./package.json');
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const autoprefixer = require('gulp-autoprefixer')
+const browserSync = require('browser-sync')
+const reload = browserSync.reload
+var exec = require('child_process').exec;
 
-// Set the banner content
-const banner = ['/*!\n',
-  ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-  ' */\n',
-  '\n'
-].join('');
+gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => {
+  gulp.watch('./src/sass/**/*', ['styles'])
+  gulp.watch('./src/js/**/*', ['webpack'])
+  gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css']).on('change', reload)
+})
 
-// Copy third party libraries from /node_modules into /vendor
-gulp.task('vendor', function(cb) {
-
-  // Bootstrap
-  gulp.src([
-      './node_modules/bootstrap/dist/**/*',
-      '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
-      '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
-    ])
-    .pipe(gulp.dest('./vendor/bootstrap'))
-
-  // jQuery
-  gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery'))
-
-  cb();
-
-});
-
-// CSS task
-function css() {
-  return gulp
-    .src("./scss/*.scss")
-    .pipe(plumber())
-    .pipe(sass({
-      outputStyle: "expanded"
-    }))
-    .on("error", sass.logError)
+gulp.task('styles', () => {
+  gulp.src('src/sass/**/*.scss')
+    .pipe(
+      sass({
+        outputStyle: 'compressed'
+      })
+      .on('error', sass.logError))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
+      browsers: ['last 2 versions']
     }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(gulp.dest("./css"))
-    .pipe(rename({
-      suffix: ".min"
-    }))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
-    .pipe(browsersync.stream());
-}
+    .pipe(gulp.dest('./public/css'))
+    .pipe(browserSync.stream())
+})
 
-// Tasks
-gulp.task("css", css);
+gulp.task('browser-sync', ['styles'], function () {
 
-// BrowserSync
-function browserSync(done) {
-  browsersync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
-  done();
-}
+  browserSync.init({
+        server: './public',
+        notify: false,
+        open: false //change this to true if you want the broser to open automatically
+    });
+})
 
-// BrowserSync Reload
-function browserSyncReload(done) {
-  browsersync.reload();
-  done();
-}
-
-// Watch files
-function watchFiles() {
-  gulp.watch("./scss/**/*", css);
-  gulp.watch("./**/*.html", browserSyncReload);
-}
-
-gulp.task("default", gulp.parallel('vendor', css));
-
-// dev task
-gulp.task("dev", gulp.parallel(watchFiles, browserSync));
+gulp.task('webpack', (cb) => {
+  exec('webpack', function (err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+    });
+})
