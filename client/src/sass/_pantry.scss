@@ -1,0 +1,23 @@
+#pantry {
+  padding-left: 280px;
+
+  .table {
+    margin-top: 50px;
+    border: 1px solid $lightBrown;
+
+    thead {
+      th {
+        border: 1px solid $lightBrown;
+        cursor: pointer;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          border: 1px solid $lightBrown;
+        }
+      }
+    }
+  }
+}
