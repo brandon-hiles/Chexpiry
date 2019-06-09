@@ -1,18 +1,3 @@
-This is an archive repository of the UofT VI Hack.
-
-# Team Members
-1. Brandon Hiles (Backend + Software architect)
-2. Julia Chae (Frontend)
-3. Samantha Dalia (Frontend)
-4. Sailesh Nankani (Backend)
-
-Notes:
-
-1. The list of team members are in no particular order 
-2. I have not listed any personal information, for privacy concerns. If you need to get in contact
-with anyone on the list, please shoot an email to me at brandon.j.hiles@gmail.com, and
-I will try to get you contact with them.
-
 # Chexpiry
 
 ## Inspiration
@@ -27,9 +12,8 @@ Pantry feature is a page for the user to keep track of the vegetables and fruits
 
 Lastly, the Suggestions feature reminds the user of the existing food items in the pantry that are approaching their estimated shelf lives. This feature begins to send reminder notification to the user 3 days prior to the estimated shelf life, recommending recipes or food preservation methods to reduce food waste.
 
-
-## Copyright and License Usage
-
-This site required the use of [Business Casual](http://startbootstrap.com/template-overviews/business-casual/), a start bootstrap theme with the following copyright associated to it:
-
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/gh-pages/LICENSE) license.
+# Original Team Members
+1. Brandon Hiles (Backend + Software architect)
+2. Julia Chae (Frontend)
+3. Samantha Dalia (Frontend)
+4. Sailesh Nankani (Backend)
