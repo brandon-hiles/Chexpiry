@@ -13,7 +13,7 @@ Pantry feature is a page for the user to keep track of the vegetables and fruits
 Lastly, the Suggestions feature reminds the user of the existing food items in the pantry that are approaching their estimated shelf lives. This feature begins to send reminder notification to the user 3 days prior to the estimated shelf life, recommending recipes or food preservation methods to reduce food waste.
 
 ## Original Team Members
-1. Brandon Hiles (Backend + Software architect)
-2. Julia Chae (Frontend)
-3. Samantha Dalia (Frontend)
-4. Sailesh Nankani (Backend)
+1. Brandon Hiles
+2. Julia Chae 
+3. Samantha Dalia 
+4. Sailesh Nankani
