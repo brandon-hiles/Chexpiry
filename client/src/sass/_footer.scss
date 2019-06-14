@@ -1,6 +1,7 @@
 #footer {
 
-  background: $brownLight;
+  background: $darkBrown;
+  color: $lightBrown;
 
   .socials {
     margin: 0;
@@ -12,6 +13,16 @@
       height: 24px;
       padding-right: 10px;
     }
+  }
+
+  p {
+    text-align: center;
+  }
+
+  img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
