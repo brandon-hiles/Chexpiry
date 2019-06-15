@@ -2,6 +2,15 @@ import React, { Component} from 'react'
 
 export default class Login extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      email: "",
+      password: "",
+      lookup: "localhost:5000/api/lookup" // Location to backend server
+    };
+  }
+
   render() {
     return (
       <div id="background">

@@ -25,8 +25,8 @@ export default class Footer extends Component {
         </div>
         <hr />
         <div className="footer-bottom">
+        <p className="socials"> Follow me on the socials </p>
           <div className="icons-container">
-            <p className="socials"> Follow me on the socials </p>
             <a target="_blank" href="https://www.github.com/brandon-hiles/"> <img src="img/icons/footer-icon-github.svg" /> </a>
             <a target="_blank" href="https://twitter.com/BrandonJHiles"> <img src="img/icons/footer-icon-twitter.svg" /> </a>
             <a target="_blank" href="https://www.linkedin.com/in/brandon-hiles/"> <img src="img/icons/footer-icon-linkedin.svg" /> </a>
