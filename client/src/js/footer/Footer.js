@@ -11,15 +11,15 @@ export default class Footer extends Component {
           <div className="aboutUs">
             <div className="flex-container">
               <h3> About Us </h3>
-              <a href="#"> Who we are </a>
-              <a href="#"> FAQ </a>
+              <a href="#" className="link"> Who we are </a>
+              <a href="#" className="link"> FAQ </a>
             </div>
           </div>
           <div className="legal">
             <div className="flex-container">
               <h3> Legal </h3>
-              <a href="#"> Terms of use </a>
-              <a href="#"> Privacy Policy </a>
+              <a href="#" className="link"> Terms of use </a>
+              <a href="#" className="link"> Privacy Policy </a>
             </div>
           </div>
         </div>

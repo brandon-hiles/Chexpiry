@@ -8,6 +8,7 @@ header {
   }
 
   nav {
+    margin: 0;
     float: right;
     ul {
       li {
@@ -27,16 +28,19 @@ header {
   width: 100%;
 }
 
-h1 {
-  text-align: center;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white !important;
-}
+#title {
+  background: $Brown;
+  h1 {
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white !important;
+  }
 
-h2 {
-  text-align: center;
-  color: $lightBrown !important;
+  h2 {
+    text-align: center;
+    color: $lightBrown !important;
+  }
 }
 
 #background {
@@ -110,11 +114,17 @@ h2 {
   }
 }
 
+.intro-img {
+  float: right;
+}
+
 .footer {
   background-color: #4c2c2c;
   color: white;
 }
 
 #main-content {
-  background-color: #4c2c2c;
+  //background-color: #4c2c2c;
+  background-color: $darkBrown;
+
 }

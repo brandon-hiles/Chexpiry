@@ -11,9 +11,11 @@ export default class Navigation extends Component {
     return (
       <Router>
         <div id="main-content">
-          <h1> Chexpiry </h1>
-          <h2> AN INTELLIGENT WAY TO REDUCE WASTE </h2>
           <header>
+            <div id="title">
+              <h1> Chexpiry </h1>
+              <h2> AN INTELLIGENT WAY TO REDUCE WASTE </h2>
+            </div>
               <nav id="demo-nav">
                 <ul>
                   <li> <Link to="/" className="links">Home</Link> </li>
