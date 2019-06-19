@@ -1,130 +1,103 @@
-header {
-  background: $darkBrown;
-  color: white;
+#main-content {
+  background-color: $darkBrown;
 
-  .logo {
-    float: left;
-    padding-top: 18px;
-  }
+  #intro-header {
+    background: $darkBrown;
+    color: white;
 
-  nav {
-    margin: 0;
-    float: right;
-    ul {
-      li {
-        display: inline;
-        padding-bottom: 12px;
-        a {
-          text-decoration: none;
-          color: white;
+    .logo {
+      float: left;
+      padding-top: 18px;
+    }
+
+    #demo-nav {
+      background-color: $darkBrown;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin: 0;
+      float: right;
+
+      ul {
+        li {
+          display: inline;
+          padding-bottom: 12px;
+          a {
+            text-decoration: none;
+            margin-left: 200px;
+            color: white;
+          }
+        }
+      }
+
+        &.active {
+          color: $lightBrown;
         }
       }
     }
-  }
-}
 
-#main-nav {
 
-  width: 100%;
-}
 
-#title {
-  background: $Brown;
-  h1 {
-    text-align: center;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: white !important;
-  }
+  #title {
+    background: $Brown;
+    h1 {
+      text-align: center;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: white !important;
+    }
 
-  h2 {
-    text-align: center;
-    color: $lightBrown !important;
-  }
-}
-
-#background {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65))), url("../img/bg.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height:100vh;
-}
-
-#demo-nav {
-  background-color: $darkBrown;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  a {
-    text-decoration: none;
-    margin-left: 200px;
-    color: white;
-
-    &.active {
-      color: $lightBrown;
+    h2 {
+      text-align: center;
+      color: $lightBrown !important;
     }
   }
-}
 
-#box {
-  width: 30%;
-  float: left;
-  padding: 48px;
-  background-color: rgba(255,255,255,.85);
-  height: 628px;
-
-  .btn {
-    color: black;
+  #background {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65))), url("../img/bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height:100vh;
   }
 
-  .center {
-    text-align: center;
+  #box {
+    width: 35%;
+    float: left;
+    padding: 48px;
+    background-color: rgba(255,255,255,.85);
+    height: 628px;
+
+    .btn {
+      color: black;
+    }
+
+    .section-heading {
+      font-size: 3rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .section-heading-upper {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .section-heading-lower {
+      display: block;
+      font-size: 3rem;
+      font-weight: 100;
+      text-transform: uppercase;
+      text-align: center;
+    }
   }
 
-  .section-heading {
-    font-size: 3rem;
-    font-weight: 300;
-    text-transform: uppercase;
+  .intro-img {
+    float: left;
+    width: 60%;
   }
-
-  .blue {
-    text-align: center;
-    background: blue;
-    color: white;
-  }
-
-  .yellow {
-    text-align: center;
-    background: yellow;
-    color: white;
-  }
-
-  .green {
-    text-align: center;
-    background: green;
-    color: white;
-  }
-
-  .red {
-    text-align: center;
-    background: red;
-    color: white;
-  }
-}
-
-.intro-img {
-  float: right;
-}
-
-.footer {
-  background-color: #4c2c2c;
-  color: white;
-}
-
-#main-content {
-  //background-color: #4c2c2c;
-  background-color: $darkBrown;
 
 }

@@ -11,7 +11,7 @@ export default class Navigation extends Component {
     return (
       <Router>
         <div id="main-content">
-          <header>
+          <header id="intro-header">
             <div id="title">
               <h1> Chexpiry </h1>
               <h2> AN INTELLIGENT WAY TO REDUCE WASTE </h2>
