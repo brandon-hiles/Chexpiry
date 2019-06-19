@@ -1,8 +1,31 @@
 import React, {Component} from 'react'
+import pantryData from './data/pantryData'
 
 export default class Pantry extends Component {
 
+  constructor () {
+    super()
+    this.state = {
+      name: 'Brandon',
+      pantryData
+    }
+    this.template = this.template.bind(this);
+  }
 
+  template() {
+    var {pantryData} = this.state;
+
+    return pantryData.map((item) => {
+      return (
+        <tr>
+          <td> {item.item} </td>
+          <td> {item.createDate} </td>
+          <td> {item.expiryDate} </td>
+          <td> {item.delete} </td>
+        </tr>
+      )
+    })
+  }
 
   render() {
     return (
@@ -16,36 +39,7 @@ export default class Pantry extends Component {
             <th> Delete Item </th>
           </thead>
           <tbody>
-            <tr>
-              <td> Item 1 </td>
-              <td> 06/08/2019 </td>
-              <td> 06/10/2019 </td>
-              <td> <input type="submit" /> </td>
-            </tr>
-            <tr>
-              <td> Item 2 </td>
-              <td> 06/08/2019 </td>
-              <td> 06/12/2019 </td>
-              <td> <input type="submit" /> </td>
-            </tr>
-            <tr>
-              <td> Item 3 </td>
-              <td> 06/09/2019 </td>
-              <td> 06/15/2019 </td>
-              <td> <input type="submit" /> </td>
-            </tr>
-            <tr>
-              <td> Item 4 </td>
-              <td> 06/07/2019 </td>
-              <td> 06/10/2019 </td>
-              <td> <input type="submit" /> </td>
-            </tr>
-            <tr>
-              <td> Item 5 </td>
-              <td> 06/08/2019 </td>
-              <td> 06/10/2019 </td>
-              <td> <input type="submit" /> </td>
-            </tr>
+            {this.template()}
           </tbody>
         </table>
       </div>
