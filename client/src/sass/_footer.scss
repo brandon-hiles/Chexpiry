@@ -1,33 +1,41 @@
 #footer {
-  margin-top: 50px;
   background: $darkBrown;
   color: $lightBrown;
 
-  .socials {
-    margin: 0;
-  }
-
-  .icons-container {
-    margin-left: 48%;
-    margin-right: 52%;
-    display: inline;
-
-    img {
-      width: 24px;
-      height: 24px;
-      padding-right: 10px;
+  .footer-top {
+    .flex-container {
+      display: flex;
+      flex-direction: bottom;
+    }
+    .link {
+      display: block;
     }
   }
 
-  p {
-    text-align: center;
+  hr {
+    border-color: white;
   }
 
-  .flex-container {
-    display: flex;
-    flex-direction: bottom;
-  }
-  .link {
-    display: block;
+  .footer-bottom {
+
+    p {
+      text-align: center;
+    }
+
+    .socials {
+      margin: 0;
+    }
+
+    .icons-container {
+      margin-left: 48%;
+      margin-right: 52%;
+      display: inline;
+
+      img {
+        width: 24px;
+        height: 24px;
+        padding-right: 10px;
+      }
+    }
   }
 }

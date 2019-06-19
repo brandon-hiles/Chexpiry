@@ -23,7 +23,6 @@ export default class Footer extends Component {
             </div>
           </div>
         </div>
-        <hr />
         <div className="footer-bottom">
         <p className="socials"> Follow me on the socials </p>
           <div className="icons-container">
