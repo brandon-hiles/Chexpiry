@@ -11,7 +11,8 @@ export default class Register extends Component {
             <div className="col-4">
                 <div className="card">
                     <div className="card-body">
-                        <form action="" autocomplete="off">
+                      <h3 id="login-header"> Register </h3>
+                        <form action="localhost:5000/api/v1/login/create" autoComplete="off">
                             <div className="form-group">
                                 <input type="text" className="form-control" name="first_name" placeholder="First Name" />
                             </div>
@@ -30,7 +31,9 @@ export default class Register extends Component {
                             <div className="form-group">
                                 <input type="password" className="form-control" name="confirm_password" placeholder="Confirm Password" />
                             </div>
-                            <button type="button" id="sendlogin" className="btn btn-primary">Register</button>
+                            <p id="login-button">
+                              <button type="button" id="sendlogin" className="btn btn-primary btn-color">Register</button>
+                            </p>
                         </form>
                     </div>
                 </div>

@@ -14,12 +14,13 @@ export default class Login extends Component {
   render() {
     return (
       <div id="background">
-        <h2> Login </h2>
+        <h2>Login</h2>
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-4">
                 <div className="card">
                     <div className="card-body">
+                      <h3 id="login-header"> Login </h3>
                         <form action="" autocomplete="off">
                             <div className="form-group">
                                 <input type="text" className="form-control" name="username" placeholder="Email" />
@@ -27,7 +28,9 @@ export default class Login extends Component {
                             <div className="form-group">
                                 <input type="password" className="form-control" name="password" placeholder="Password" />
                             </div>
-                            <button type="button" id="sendlogin" className="btn btn-primary">Login</button>
+                            <p id="login-button">
+                              <button type="button" id="sendlogin" className="btn btn-primary btn-color">Login</button>
+                            </p>
                         </form>
                     </div>
                 </div>
