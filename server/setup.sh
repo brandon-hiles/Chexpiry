@@ -5,11 +5,14 @@
 echo "Download Backend Server Libraries"
 pip3 install flask
 pip3 install python-dotenv
+pip3 install wtforms
 
 echo "Download Database Libraries"
 pip3 install SQLAlchemy
 pip3 install flask-sqlalchemy
 pip3 install flask-migrate
+pip3 install flask-wtf
+pip3 install pymysql
 
 echo "Download AI Libraries"
 pip3 install tensorflow
