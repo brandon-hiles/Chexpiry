@@ -11,9 +11,3 @@ The Shopping feature of the app is to be used at the end of each grocery run. Wh
 Pantry feature is a page for the user to keep track of the vegetables and fruits in their fridge as well as their estimated shelf lives. The items are automatically added to the Pantry upon grocery picture upload and stay on the list until "Removed" by the user, after it has been eaten.
 
 Lastly, the Suggestions feature reminds the user of the existing food items in the pantry that are approaching their estimated shelf lives. This feature begins to send reminder notification to the user 3 days prior to the estimated shelf life, recommending recipes or food preservation methods to reduce food waste.
-
-## Original Team Members
-1. Brandon Hiles
-2. Julia Chae 
-3. Samantha Dalia 
-4. Sailesh Nankani
