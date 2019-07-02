@@ -1,10 +1,15 @@
-# HackUofT2019
+#Server
 
-This repository contains code for the backend of an application called Chexpiry. 
+This server is a RESTful API used for managing the backend server logic. This
+API is written in Python3 utilizing the Flask microframework, and below is a
+quick starter guide to building the API.
 
-Chexpiry is an application that focuses on minimizing food waste by informing the user of the short shelf lives of fruits & vegetables.
+##Installation:
+1. Read and follow the pre-reqs in setup.sh
+2. Run virtualenv env in your working directory terminal
+3. Run setup.sh in the virtual environment
+4. Run "flask run" - this starts up your local server on port 5000 (by default)
 
-STACK: Python3 & Flask, AWS Dynamodb (Work in Progress), Google Cloud Vision API
-
-# Frontend code:
-Link: https://github.com/samantha-u/chexpiry
+##Tools Used in this API:
+1. Alembic: Alembic is a lightweight database migration tool for usage with the SQLAlchemy Database Toolkit for Python.
+2. Jinja: For Templating
