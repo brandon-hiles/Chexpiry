@@ -32,34 +32,6 @@ def store():
     except exc.SQLAlchemyError:
         return jsonify({'Status' : 404, 'Message' : 'User has already been added'})
 
-# Users
-@api.route('/db/<database>/user/store', methods=['POST'])
-def store_user(database):
-
-    # Initialize our user requested paramters
-    first_name = request.args.get('first_name')
-    last_name = request.args.get("last_name")
-    phone = request.args.get("phone")
-    email = request.args.get("email")
-    password = request.args.get("password")
-
-    # Define Our User object
-
-    return f"User Object ({first_name} {last_name} {phone} {email} {password})"
-
-# User Endpoint
-@api.route('/user/check', methods=['GET'])
-def get_users():
-    user_list = []
-    user_dict = { 'status' : str(login.check_user()) }
-    user_list.append(user_dict)
-    json_string = json.dumps(user_list)
-    return jsonify(User=json_string)
-
-@api.route('/user', methods=['POST'])
-def create_user():
-    return "Create User"
-
 @api.route('/user', methods=['PUT'])
 def update_user(id):
     return "Update User"
