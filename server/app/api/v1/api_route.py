@@ -46,3 +46,7 @@ def get_recipes():
 def connect():
     aws.upload(file="README.md", user='brandon')
     return render_template('aws.html')
+
+@api.route('/documentation', methods=['GET'])
+def document():
+    return "Documentation Endpoint"
