@@ -1,12 +1,16 @@
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+from os.path import join, dirname
+from dotenv import load_dotenv
 
+# Grab environment variables
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
-# Current database configuration
-server = 'localhost'
-db = 'chexpiry'
-username = 'root'
-password = 'password'
+# Setup SQL Variables
+server = os.environ.get("SQL_SERVER")
+db = os.environ.get("SQL_DATABASE")
+username = os.environ.get("SQL_USERNAME")
+password = os.environ.get("SQL_PASSWORD")
 
 class Config(object):
     # ...
