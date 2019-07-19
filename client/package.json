@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.467.0",
+    "axios": "^0.19.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.0.16",
@@ -35,6 +36,7 @@
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^5.0.0",
+    "react-validation": "^3.0.7",
     "redux": "^3.6.0",
     "sass-loader": "^6.0.3",
     "standard": "^10.0.2",
@@ -47,7 +49,8 @@
     "watch": "gulp",
     "sass": "gulp styles",
     "js": "gulp webpack",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
