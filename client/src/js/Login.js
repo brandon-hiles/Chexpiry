@@ -82,6 +82,3 @@ export default class Login extends Component {
     )
   }
 }
-//<p id="login-button">
-//  <button type="button" id="sendlogin" className="btn btn-primary btn-color">Login</button>
-//</p>
