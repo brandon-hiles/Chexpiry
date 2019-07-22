@@ -10,8 +10,8 @@ from app.api.v1.src.user import User_Object
 # Database Endpoint
 
 # Create User
-@api.route('/db/users/store', methods=['POST'])
-def store():
+@api.route('/user/store', methods=['POST'])
+def store_user():
 
     # Initialize our user requested paramters
     first_name = request.args.get('first_name')
@@ -26,15 +26,80 @@ def store():
                 phone=phone,
                 email=email,
                 password=password)
-    try:
-        user.store()
-        return jsonify({'Status' : 200, 'Message' : 'User has been successfully added'})
-    except exc.SQLAlchemyError:
-        return jsonify({'Status' : 404, 'Message' : 'User has already been added'})
 
-@api.route('/user', methods=['PUT'])
-def update_user(id):
-    return "Update User"
+    return user.store()
+
+@api.route('/user/check', methods=['GET'])
+def check_user():
+    # Check user endpoint
+
+    # Initialize our user requested paramters
+    email = request.args.get("email")
+    password = request.args.get("password")
+
+    # Initialize our User object
+    user = User_Object(first_name="None",
+                last_name="None",
+                phone="None",
+                email=email,
+                password=password)
+
+    return user.check()
+
+@api.route('/user/update', methods=['PUT'])
+def update_user():
+    # Update user endpoint
+
+    # Initialize our user requested paramters
+    first_name = request.args.get('first_name')
+    last_name = request.args.get("last_name")
+    phone = request.args.get("phone")
+    email = request.args.get("email")
+    password = request.args.get("password")
+
+    # Initialize our User object
+    user = User_Object(first_name=first_name,
+                last_name=last_name,
+                phone=phone,
+                email=email,
+                password=password)
+
+    return user.update()
+
+@api.route('/user/delete', methods=['DELETE'])
+def delete_user():
+
+    # Initialize our user requested paramters
+    first_name = request.args.get('first_name')
+    last_name = request.args.get("last_name")
+    phone = request.args.get("phone")
+    email = request.args.get("email")
+    password = request.args.get("password")
+
+    # Initialize our User object
+    user = User_Object(first_name=first_name,
+                last_name=last_name,
+                phone=phone,
+                email=email,
+                password=password)
+
+    return user.delete()
+
+# Pantry Endpoints
+@api.route('/pantry/check', methods=['GET'])
+def get_pantry():
+    # Check the items in the pantry
+    return 'Pantry List'
+
+@api.route('/pantry/add', methds=['POST', 'PUT'])
+def add_pantry():
+    # Add item to the Pantry
+    return 'Item has been added'
+
+@api.route('/pantry/assign', methods=['PUT'])
+def assign_expiry_date():
+    # Assigns the expiry date to the item (Requires an AI Model)
+    return 'Expiry Date is set'
 
 # Recipe Endpoint
 @api.route('/recipes', methods=['GET'])
