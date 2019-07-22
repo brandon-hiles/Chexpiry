@@ -1,5 +1,6 @@
 from flask import jsonify,json
 from flask import request
+from flask import render_template
 from sqlalchemy import exc
 
 
@@ -12,6 +13,10 @@ from app.api.v1.src.user import User_Object
 # Create User
 @api.route('/user/store', methods=['POST'])
 def store_user():
+    """
+    Store User Endpoint: Stores User in database, if user does
+    not already exist in database.
+    """
 
     # Initialize our user requested paramters
     first_name = request.args.get('first_name')
@@ -85,16 +90,23 @@ def delete_user():
 
     return user.delete()
 
+@api.route('/user/upload', methods=['PUT'])
+def upload_file():
+
+    file = request.args.get("file")
+    return "File was successfully uploaded"
+
 # Pantry Endpoints
 @api.route('/pantry/check', methods=['GET'])
 def get_pantry():
     # Check the items in the pantry
-    return 'Pantry List'
 
-@api.route('/pantry/add', methds=['POST', 'PUT'])
-def add_pantry():
-    # Add item to the Pantry
-    return 'Item has been added'
+    item = request.args.get("item")
+    if item == 'all':
+        # return all items
+        pass
+    else:
+        return item
 
 @api.route('/pantry/assign', methods=['PUT'])
 def assign_expiry_date():
@@ -114,4 +126,4 @@ def connect():
 
 @api.route('/documentation', methods=['GET'])
 def document():
-    return "Documentation Endpoint"
+    return render_template('documentation.html')
