@@ -3,14 +3,61 @@
   <head>
     <title> Chexpiry Documentation Page </title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+    </style>
   </head>
 
   <body>
-    <h1> Documentation Page </h1>
     <div class="container">
+      <h1 style="text-align: center;"> Documentation Page </h1>
       <div class="row">
-        Test
-      </div>
+        <dic class="col-lg-12">
+          <table border="1">
+            <thead>
+              <tr>
+                <th class="table-elm"> Endpoint </th>
+                <th class="table-elm"> URI params </td>
+                <th class="table-elm"> Methods </td>
+                <th class="table-elm"> Description </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> /user/store </td>
+                <td> first_name, last_name, phone, email, password </td>
+                <td> POST </td>
+                <td> If user doesn't exist in database, then stores users information </td>
+              </tr>
+              <tr>
+                <td> /user/check </td>
+                <td> email, password </td>
+                <td> GET </td>
+                <td> Check if user exists within the database. <br>
+                  return True if user exists and False if user doesn't exist in
+                  the Status property.
+              </tr>
+              <tr>
+                <td> /user/update </td>
+                <td> first_name, last_name, phone, email, password </td>
+                <td> PUT </td>
+                <td> Update user variables inside our database </td>
+              </tr>
+              <tr>
+                <td> /user/delete </td>
+                <td> first_name, last_name, phone, email, password </td>
+                <td> DELETE </td>
+                <td> Deletes user out of the database </td>
+              </tr>
+              <tr>
+                <td> /user/upload </td>
+                <td> file </td>
+                <td> PUT </td>
+                <td> Uploads photo to AWS account </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
