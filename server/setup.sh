@@ -6,6 +6,7 @@ echo "Download Backend Server Libraries"
 pip3 install flask
 pip3 install python-dotenv
 pip3 install wtforms
+pip3 install flask_cors
 
 echo "Download Database Libraries"
 pip3 install SQLAlchemy
