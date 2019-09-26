@@ -1,4 +1,6 @@
 import React, { Component} from 'react'
+import axios from 'axios';
+import '../sass/app.scss'
 
 export default class Register extends Component {
 
@@ -20,11 +22,18 @@ export default class Register extends Component {
   handleSubmit(evt) {
     // do something with form data
     evt.preventDefault();
-    alert(`You typed: ${this.state.email}`);
+    let base = "http://localhost:5000/api/v1/user/store";
+    let url = base + `?first_name=${this.state.first_name}&last_name=${this.state.last_name}&phone=${this.state.phone_number}&email=${this.state.email}&password=${this.state.password}`
+    axios.post(url).then((response) => {
+      let token = response.data['token']
+      sessionStorage.setItem("token", token);
+    }).catch((error) => {
+      console.log(error);
+    })
     this.setState({email : ""});
   }
 
-  handleChange(evt) {
+  handleChange(evt) { 
     // runs on every keystroke event
     this.setState({
       [evt.target.name]: evt.target.value
@@ -89,11 +98,7 @@ export default class Register extends Component {
                                 value={this.state.confirm_password}
                                 onChange= {this.handleChange}/>
                             </div>
-                            <p id="login-button">
-                              <button type="button"
-                              id="sendlogin"
-                              className="btn btn-primary btn-color">Submit</button>
-                            </p>
+                            <input type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>

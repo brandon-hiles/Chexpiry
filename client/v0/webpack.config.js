@@ -1,53 +1,37 @@
 const path = require('path');
-const webpack = require('webpack')
-
-const VENDOR_LIBS = [
-  'babel-polyfill', 'redux', 'react-redux', 'react-dom'
-]
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: {
-    app  : './src/js/app.js',
-    vendor: VENDOR_LIBS
+  mode: 'development',
+  entry: './src/index',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'build')
   },
-  output: { filename: '[name].js',
-            path: path.resolve(__dirname, 'public/js/components') },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([{ from: 'public/index.html' }]),
+  ],
+  devServer: {
+    port: 3000,
+    contentBase: path.join(__dirname, './public'),
+    hot: true,
+    open: true,
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /.jsx?$/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            [ 'es2015', { modules: false } ],
-            'stage-0', 'react'
-          ]
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.scss$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader", options: {
-                sourceMap: true
-            }
-        }, {
-            loader: "sass-loader", options: {
-                sourceMap: true
-            }
-        }]
-    }
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
     ]
-  },
-  plugins: [
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor',
-                minChunks: function (module) {
-                   // this assumes your vendor imports exist in the node_modules directory
-                   return module.context && module.context.indexOf('node_modules') !== -1;
-                }
-            }),
-        ]
+  }
 };

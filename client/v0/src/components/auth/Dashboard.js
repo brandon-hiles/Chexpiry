@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import Logout from './Logout.js'
-import Pantry from './Pantry.js'
-import Profile from './Profile.js'
-import Settings from './Settings.js'
-import Suggestions from './Suggestions.js'
+import Logout from './Logout'
+import Pantry from './Pantry'
+import Profile from './Profile'
+import Settings from './Settings'
+import Suggestions from './Suggestions'
 
 export default class Dashboard extends Component {
   constructor() {
@@ -31,11 +31,6 @@ export default class Dashboard extends Component {
                 <p className="copyright"> Copyright &copy; 2019 </p>
               </footer>
             </section>
-            <Route exact path="/" component={Profile} />
-            <Route path="/settings" component={Settings} />
-            <Route path="/pantry" component={Pantry} />
-            <Route path="/suggestions" component={Suggestions} />
-            <Route path="/logout" component={Logout} />
           </div>
         </Router>
       )

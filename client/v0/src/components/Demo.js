@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../sass/app.scss'
 
 export default class Demo extends Component {
 

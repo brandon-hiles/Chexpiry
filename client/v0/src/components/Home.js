@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import '../sass/app.scss'
 
-export default class Index extends Component {
+export default class Home extends Component {
 
     render() {
       return (

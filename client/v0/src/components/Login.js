@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
+import { Redirect } from "react-router"
+import '../sass/app.scss'
 
 export default class Login extends Component {
 
@@ -17,14 +19,14 @@ export default class Login extends Component {
   handleSubmit(evt) {
     // do something with form data
     evt.preventDefault();
-    let base = 'http://localhost:5000/api/v1/db/user/check'
+    let base = 'http://localhost:5000/api/v1/user/check'
     let url = base + `?email=${this.state.email}&password=${this.state.password}`
     axios.get(url).then((response) => {
       // handle success
       let status = response.data['Status']
       if (status == '200') {
-        console.log("Success")
-        // Redirect user to login page (Implement this functionality)
+        let token = response.data['token']
+        sessionStorage.setItem("token", token);
       } else {
         console.log("Failure")
         // Display error under the password field, stating Email and/or password is incorrect
