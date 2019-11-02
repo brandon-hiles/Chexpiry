@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const data = require('./src/components/analytics/data/data.json');
 
 module.exports = {
   mode: 'development',
@@ -19,7 +19,11 @@ module.exports = {
     contentBase: path.join(__dirname, './public'),
     hot: true,
     open: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    before: function(app) {
+      app.get('/api/data', function(req, res) {
+        res.json(data);
+      })}
   },
   module: {
     rules: [
