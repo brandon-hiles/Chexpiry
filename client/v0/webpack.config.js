@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const data = require('./src/components/analytics/data/data.json');
+const userData = require('./src/components/auth/data/testData.json');
 
 module.exports = {
   mode: 'development',
@@ -21,9 +21,13 @@ module.exports = {
     open: true,
     historyApiFallback: true,
     before: function(app) {
-      app.get('/api/data', function(req, res) {
-        res.json(data);
-      })}
+      app.get('/api/data/user_info', function(req, res) {
+        res.json(userData);
+      })
+      app.get('/api/data/pantry', function(req, res) {
+        res.json(userData);
+      })
+    }
   },
   module: {
     rules: [
