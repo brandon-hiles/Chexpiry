@@ -1,38 +1,45 @@
-import React, {Component} from 'react'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import Logout from './Logout'
-import Pantry from './Pantry'
-import Profile from './Profile'
-import Settings from './Settings'
-import Suggestions from './Suggestions'
+import React, {Component} from 'react';
+import * as d3 from 'd3';
+
+const axios = require('axios');
 
 export default class Dashboard extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loginCheck: ''
-    }
-  }
 
-  render() {
-      return (
-        <Router>
-          <div>
-            <section id="sideMenu">
-              <h2 className="title"> Chexpiry </h2>
-              <nav>
-                <li> <Link to="/" className="active"> <i className="fa fa-home" aria-hidden="true"></i> Profile </Link> </li>
-                <li> <Link to="/settings"> <i className="fa fa-cog" aria-hidden="true"></i> Settings </Link> </li>
-                <li> <Link to="/pantry"> <i className="fa fa-bookmark-o" aria-hidden="true"></i> Pantry </Link> </li>
-                <li> <Link to="/suggestions"> <i className="fa fa-calendar-check-o" aria-hidden="true"></i> Suggestions </Link> </li>
-                <li> <Link to="/logout"> <i className="fa fa-user-circle" aria-hidden="true"></i> Logout </Link> </li>
-              </nav>
-              <footer>
-                <p className="copyright"> Copyright &copy; 2019 </p>
-              </footer>
-            </section>
-          </div>
-        </Router>
-      )
-  }
+    /* 
+    Potential Items to add:
+    1. Reminder Component (/helpers)
+    2. Priorization List (/auth)
+    3. Analytics (Seperate List) <-- NON-AI (Values computed from the AI stored in cache for example)
+    4. Analytics (Seperate List) <--- AI Based (Values that actively use the AI resource and consume GPU)
+    */
+
+    constructor() {
+        super()
+        this.state = {
+            firstName: "",
+            lastName: ""
+        }
+    }
+
+    grabData() {
+        // Put this into a component lifestyle method
+        axios.get('/api/data/user_info').then((res) => {
+            let data = res.data[0]
+            this.setState({
+                "firstName": data["firstName"],
+                "lastName" : data["lastName"]
+            })
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                I'm working
+            </div>
+        )
+    }
 }
