@@ -1,4 +1,5 @@
 from flask import jsonify,json
+from flask_jwt_extended import create_access_token
 from sqlalchemy import text
 from sqlalchemy import exc
 
@@ -21,17 +22,19 @@ class User_Object(object):
         email=self.email,
         password=self.password)
 
+        access_token = create_access_token(identity=self.email)
         try:
             db.session.add(user)
             db.session.commit()
             return jsonify({
-             'Status' : 200,
-             'Message' : 'User has been successfully added'
+             'status' : 200,
+             'token' : access_token,
+             'message' : 'User has been successfully added'
              })
         except exc.SQLAlchemyError:
              return jsonify({
-              'Status' : 404,
-              'Message' : 'User has already been added'
+              'status' : 404,
+              'message' : 'User has already been added'
               })
 
     def check(self):
@@ -43,14 +46,17 @@ class User_Object(object):
         result = db.engine.execute(check) # Executes SQL statement
         data = result.fetchall()
 
+        access_token = create_access_token(identity=self.email)
+
         if len(data) == 1:
             return jsonify({
-            'Status' : True,
+            'Status' : 200,
+            "token": access_token,
             'Message' : 'User does exist in the database'
             })
         else:
             return jsonify({
-            'Status' : False,
+            'Status' : 404,
             'Message' : 'User does NOT exist in the database'
             })
 

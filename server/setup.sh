@@ -7,6 +7,10 @@ pip3 install flask
 pip3 install python-dotenv
 pip3 install wtforms
 pip3 install flask_cors
+pip3 install PyJWT
+pip3 install cryptography # Dependency for PyJWT
+#pip3 install Flask-JWT
+pip3 install flask-jwt-extended
 
 echo "Download Database Libraries"
 pip3 install SQLAlchemy
