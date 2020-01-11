@@ -1,30 +1,15 @@
-import React, {Component} from 'react'
-import '../sass/app.scss'
+import React from "react";
+import PublicHeader from "./public/Header.js";
+import PrivateHeader from "./auth/Header.js";
 
-export default class Header extends Component {
-    constructor(props) {
-        super(props)
+const Header = () => {
+  if (sessionStorage.getItem("token")) {
+    // logged in -> Display this header
+    return <PrivateHeader />
+ } else {
+   // not logged in -> Display public
+   return <PublicHeader />
+ }
+};
 
-      }
-
-    render() {
-        if (this.props.isLogin == false) {
-            return (
-                <div>
-                    <header id="new-user-header">
-                        <div id="title">
-                            <h1> Chexpiry </h1>
-                            <h2> AN INTELLIGENT WAY TO REDUCE WASTE </h2>
-                        </div>
-                    </header>
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    
-                </div>
-            )
-        }
-    }
-}
+export default Header
